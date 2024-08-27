@@ -14,6 +14,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     @UserDefault("EaseChatDemoPreferencesLanguage", defaultValue: "zh-Hans") var language: String
     
+    @UserDefault("EaseScenariosDemoPhone", defaultValue: "") private var phone
+    
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -100,7 +102,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         if !EaseMob1v1CallKit.shared.onCalling {
+            self.cancelMatch()
+            EaseMob1v1CallKit.shared.cancelMatchNotify()
             ChatClient.shared().applicationDidEnterBackground(UIApplication.shared)
+            NotificationCenter.default.post(name: NSNotification.Name(connectionFailed), object: nil)
         }
     }
 
@@ -118,6 +123,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
+    func cancelMatch() {
+        EasemobBusinessRequest.shared.sendDELETERequest(api: .cancelMatch(self.phone), params: [:]) { result, error in
+            
+        }
+    }
+    
+    
 }
 
 extension SceneDelegate: ThemeSwitchProtocol {

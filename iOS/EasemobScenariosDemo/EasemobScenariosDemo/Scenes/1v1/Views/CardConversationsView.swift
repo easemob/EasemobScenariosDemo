@@ -34,6 +34,7 @@ final class CardConversationsView: UIView {
     }
     
     func refresh(messages: [ChatMessage]) {
+        self.showAnimation()
         for message in messages {
             self.newConversation(with: message)
         }
@@ -52,13 +53,14 @@ final class CardConversationsView: UIView {
             self?.performDelayTask()
         }
         self.currentTask = task
-        self.queue.asyncAfter(deadline: .now() + 3, execute: task)
+        self.queue.asyncAfter(deadline: .now() + 5, execute: task)
     }
     
     func performDelayTask() {
         DispatchQueue.main.async {
             self.dismissClosure?(nil)
             self.conversations.removeAll()
+            self.dismissAnimation()
         }
     }
     
@@ -83,12 +85,23 @@ final class CardConversationsView: UIView {
         _ = info.showContent
         return info
     }
+    
+    func showAnimation() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.transform = CGAffineTransform(translationX: 0, y: StatusBarHeight+78)
+        }, completion: nil)
+    }
+    
+    func dismissAnimation() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.transform = .identity
+        }, completion: nil)
+    }
 }
 
 extension CardConversationsView: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("conversations.count:\(self.conversations.count)")
-        return self.conversations.count
+        self.conversations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
