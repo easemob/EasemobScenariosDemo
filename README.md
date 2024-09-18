@@ -21,7 +21,7 @@
 ## Demo 体验
 | iOS                                                          | Android                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 待替换| 待替换 |
+| [iOS下载链接](https://testflight.apple.com/join/KBGvQWej)| [下载链接Android](https://download-sdk.oss-cn-beijing.aliyuncs.com/downloads/1v1SenceDemo.apk) |
 
 ## 快速开始
 
