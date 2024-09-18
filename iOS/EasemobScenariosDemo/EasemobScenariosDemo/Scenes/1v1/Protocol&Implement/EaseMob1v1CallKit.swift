@@ -10,6 +10,8 @@ import AgoraRtcKit
 import EaseChatUIKit
 import KakaJSON
 
+let endCallInsertMessageNeededReload = "endCallInsertMessageNeededReload"
+
 final class EaseMob1v1CallKit: NSObject {
     
     static let shared = EaseMob1v1CallKit()
@@ -143,6 +145,42 @@ extension EaseMob1v1CallKit: EaseMobCallKit.CallProtocol {
         
     }
     
+    func match() {
+        EasemobBusinessRequest.shared.sendPOSTRequest(api: .matchUser(()), params: ["phoneNumber":self.phone]) { [weak self] result, error in
+            guard let `self` = self else { return }
+            if error == nil {
+                if let json = result {
+                    self.requestMatchedUserInfo(json: json)
+                }
+            } else {
+                if let error = error as? EasemobError {
+                    consoleLogInfo("matchUser Error: \(error.message ?? "")", type: .error)
+                }
+            }
+        }
+    }
+    
+    private func requestMatchedUserInfo(json: [String:Any],role: CallPopupView.CallRole = .caller) {
+        let matchUser = model(from: json, MatchUserInfo.self)
+        matchUser.id = EaseChatUIKitContext.shared?.currentUserId ?? ""
+        Task {
+            let profiles = await EaseChatUIKitContext.shared?.userProfileProvider?.fetchProfiles(profileIds: [matchUser.id]) ?? []
+            if let profile = profiles.first {
+                matchUser.nickname = profile.nickname
+                matchUser.avatarURL = profile.avatarURL
+            }
+            self.currentUser = matchUser
+            DispatchQueue.main.async {
+                self.prepareEngine()
+                for key in self.handlers.keyEnumerator().allObjects {
+                    if let key = key as? NSString, let listener = self.handlers.object(forKey: key) {
+                        listener.onCallStatusChanged(status: .preparing, reason: "Call You")
+                    }
+                }
+            }
+        }
+    }
+    
     func cancelMatch() {
         EasemobBusinessRequest.shared.sendDELETERequest(api: .cancelMatch(self.phone), params: [:]) { [weak self] result, error in
             guard let `self` = self else { return }
@@ -187,6 +225,7 @@ extension EaseMob1v1CallKit: EaseMobCallKit.CallProtocol {
             self.callId = ""
             let message = ChatMessage(conversationID: conversationId, body: ChatTextMessageBody(text: "1v1通话已结束"), ext: nil)
             ChatClient.shared().chatManager?.getConversationWithConvId(conversationId)?.insert(message, error: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(endCallInsertMessageNeededReload), object: self)
         }
     }
     
@@ -227,7 +266,11 @@ extension EaseMob1v1CallKit: EaseChatUIKit.ChatEventsListener {
                         let nickname = user?.nickname ?? "匿名用户-\(userId)"
                         for key in self.handlers.keyEnumerator().allObjects {
                             if let key = key as? NSString, let listener = self.handlers.object(forKey: key) {
+                                if self.currentUser.matchedChatUser.isEmpty {
+                                    return
+                                }
                                 listener.onCallStatusChanged(status: .idle, reason: "\(nickname)取消配对")
+                                self.currentUser.matchedChatUser = ""
                             }
                         }
                     }
@@ -237,7 +280,11 @@ extension EaseMob1v1CallKit: EaseChatUIKit.ChatEventsListener {
                         let nickname = user?.nickname ?? "匿名用户-\(message.from)"
                         for key in self.handlers.keyEnumerator().allObjects {
                             if let key = key as? NSString, let listener = self.handlers.object(forKey: key) {
+                                if self.currentUser.matchedChatUser.isEmpty {
+                                    return
+                                }
                                 listener.onCallStatusChanged(status: .idle, reason: "\(nickname)取消配对")
+                                self.currentUser.matchedChatUser = ""
                             }
                         }
                     }
@@ -247,6 +294,7 @@ extension EaseMob1v1CallKit: EaseChatUIKit.ChatEventsListener {
                             for key in self.handlers.keyEnumerator().allObjects {
                                 if let key = key as? NSString, let listener = self.handlers.object(forKey: key) {
                                     listener.onCallStatusChanged(status: .ended, reason: reason)
+                                    self.onCalling = false
                                 }
                             }
                         }
