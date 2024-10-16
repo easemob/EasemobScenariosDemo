@@ -47,6 +47,8 @@ final class MineMessageListViewController: MessageListController {
         }
     }
     
+
+    
     override func viewContact(body: ChatCustomMessageBody) {
         
     }
@@ -148,13 +150,16 @@ final class MineMessageListViewController: MessageListController {
     
     private func showCallView(role: CallPopupView.CallRole = .caller) {
         self.role = role
-        self.requestCameraAndMicrophonePermissions { permission in
+        self.requestCameraAndMicrophonePermissions { [weak self] permission in
+            guard let `self` = self else { return }
             if permission {
-                EaseMob1v1CallKit.shared.currentUser.matchedChatUser = self.profile.id
-                
                 let call = CallAlertViewController(role: .caller, profile: self.profile)
                 if role == .caller {
-                    EaseMob1v1CallKit.shared.startCall()
+                    EaseMob1v1CallKit.shared.cancelMatchNotify()
+                    EaseMob1v1CallKit.shared.cancelMatch()
+                    EaseMob1v1CallKit.shared.currentUser.matchedChatUser = self.profile.id
+                    EaseMob1v1CallKit.shared.requestRTCToken(chatId: self.profile.id)
+                    EaseMob1v1CallKit.shared.callType = EaseMob1v1CallKit1v1ChatInvite
                 }
                 self.presentViewController(call,animated: true)
             }
