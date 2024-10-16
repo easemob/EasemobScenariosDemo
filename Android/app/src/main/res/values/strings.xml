@@ -1,3 +1,130 @@
-<resources>
-    <string name="app_name">EasemobScenariosDemo</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ScenariosDemo</string>
+
+    <string name="splash_title">Easemob Random Video Chat</string>
+    <string name="splash_powered">Powered by Easemob</string>
+
+    <string name="em_main_title_home">1v1</string>
+    <string name="em_main_title_messages">messages</string>
+    <string name="em_main_title_me">Me</string>
+
+    <!-- splash -->
+    <string name="em_splash_not_appkey">Please set up the app key first.</string>
+    <string name="em_splash_not_init">Please initialize the Chat SDK first.</string>
+
+    <string name="em_login_dialog_content">Easemob attaches great importance to protecting your privacy. Please read the following Service and Privacy Policy carefully. Please click "OK" button to agree, and click "Deny" to exit the app.</string>
+    <string name="em_login_dialog_content_privacy">Read the complete Service and Privacy Policy for more details.</string>
+
+    <!-- login -->
+    <string name="em_login_im">Easemob\nRandom Video Chat</string>
+    <string name="em_login_server_configure"><u>Server Configure</u></string>
+    <string name="em_register_phone_number">Phone number</string>
+
+    <string name="em_login_phone_empty">Please enter mobile number</string>
+    <string name="em_login_phone_illegal">Please enter correct mobile number</string>
+    <string name="em_login_illegal_code">Incorrect Code</string>
+    <string name="em_login_error_send_code_later">Please wait a moment while trying to send</string>
+    <string name="em_login_error_send_code_limit">Access limit reached</string>
+    <string name="em_login_get_code_again_time">Get After(%1$ds)</string>
+    <string name="em_login_get_code_again">Get Code</string>
+    <string name="em_login_btn_info_incomplete">Username or password cannot be empty.</string>
+    <string name="em_login_not_select_agreement">Please confirm Terms &amp; Policy</string>
+    <string name="em_login_code_empty">Please enter verification code</string>
+    <string name="em_login_post_code">Code Sent</string>
+    <string name="em_login_password_hint">Password</string>
+    <string name="em_login_name_hint">Username</string>
+
+    <string name="em_login_agreement">By joining, you agree to our Terms of Service and Privacy Policy</string>
+
+    <string name="em_login_dialog_title">Service and Privacy Policy</string>
+    <string name="em_login_dialog_cancel">Deny</string>
+    <string name="em_login_dialog_confirm">OK</string>
+    <string name="em_login_input_verification_code">Verification Code</string>
+    <string name="em_login_get_verification_code">Get Code</string>
+    <string name="em_login_btn">Log In</string>
+
+    <string name="em_error_user_authentication_failed">Incorrect username or password</string>
+
+    <!--private room-->
+    <string name="em_private_room_title">1v1 Room</string>
+    <string name="em_private_room_content">Waiting for other users to join</string>
+    <string name="em_private_room_send_call">Waiting response</string>
+    <string name="em_private_room_coming_call">Connection invite received</string>
+
+    <!--messages-->
+    <string name="em_private_conversation_title">Chats</string>
+    <string name="em_menu_more">More</string>
+    <string name="em_menu_video_call">Video</string>
+    <string name="em_private_room_call_fail">Connection failed</string>
+    <string name="em_call_primary_menu_title">Let\'s Chat!</string>
+    <string name="em_conversation_menu_clear">Clear Conversation</string>
+
+    <!--about me-->
+    <string name="em_about_me_title">Me</string>
+    <string name="em_about_official_website">Official Website</string>
+    <string name="em_about_official_website_url">www.easemob.com</string>
+    <string name="em_about_business_cooperation">Contact Us</string>
+    <string name="em_about_business_cooperation_number">400-622-1776</string>
+    <string name="em_about_logout">Log Out</string>
+    <string name="em_about_out_hint">Are you sure you want to log out?</string>
+
+    <string name="em_self_information">Information</string>
+    <string name="em_self_information_avatar">Avatar</string>
+    <string name="em_self_information_nick_name">Nickname</string>
+    <string name="em_self_information_camera">Camera</string>
+    <string name="em_self_information_picture">Album</string>
+    <string name="em_self_information_edit_nick_name">Nickname</string>
+    <string name="em_self_information_change_name_count">%1$d/32</string>
+    <string name="em_self_information_checked_model">Uploading avatars is not supported in the current mode</string>
+
+    <!-- The representation of a time duration when negative. An example is -1:14. This can be used with a countdown timer for example.-->
+    <string name="negative_duration">\u2212<xliff:g id="time" example="1:14">%1$s</xliff:g></string>
+
+    <string name="em_cancel">Cancel</string>
+    <string name="em_confirm">OK</string>
+    <string name="em_loading">Loading&#8230;</string>
+
+    <!-- server setting -->
+    <string name="server_set_title">Server settings</string>
+    <string name="server_set_appkey">Appkey</string>
+    <string name="server_set_apns_cert_name">APNs certificate name</string>
+    <string name="server_set_specify_server">Use private server:</string>
+    <string name="server_set_server_address">IM server address</string>
+    <string name="server_set_server_port">Port</string>
+    <string name="server_set_rest_server_address">RESTful server address</string>
+    <string name="server_set_appkey_empty_hint">Please set an app key</string>
+    <string name="server_set_im_server_empty_hint">Set the IM server address</string>
+    <string name="server_set_im_port_empty_hint">Set the IM port number</string>
+    <string name="server_set_rest_server_empty_hint">Set the RESTful server address</string>
+    <string name="server_open_develop_mode">Open develop mode?</string>
+    <string name="server_close_develop_mode">Close develop mode?</string>
+    <string name="server_set_menu_save">Save</string>
+    <string name="server_set_illegal_appkey" translatable="false">You set a illegal appkey</string>
+    <string name="server_set_dialog_title">Reset App</string>
+    <string name="server_set_dialog_content">The current server settings need to be restarted to take effect.Confirm restart?</string>
+    <string name="server_set_dialog_confirm_button_text">Reset</string>
+
+    <!--presence-->
+    <string name="em_presence_online">Online</string>
+    <string name="em_presence_busy">Busy</string>
+    <string name="em_presence_do_not_disturb">Do not Disturb</string>
+    <string name="em_presence_away">Away</string>
+    <string name="em_presence_offline">Offline</string>
+    <string name="em_presence_custom">Custom Status</string>
+    <string name="em_presence_status">Status</string>
+    <string name="em_presence_done">Done</string>
+    <string name="em_presence_dialog_title">Customize online status</string>
+    <string name="em_presence_dialog_input_hint">Please enter</string>
+
+    <!--callkit-->
+    <string name="em_activity_label_1v1_call">1v1_call</string>
+    <string name="em_start_call">You are invited to join the one-to-one call.</string>
+    <string name="em_end_call">The one-to-one call is ended.</string>
+
+    <!--call gift-->
+    <string name="em_call_gift_name">Sent ’@ %1$s’</string>
+    <string name="chatroom_gift_title">Gift</string>
+    <string name="chatroom_gift_dialog_send">Sent</string>
+    <string name="dialog_gift_total_count">Total:%1$s</string>
+
 </resources>

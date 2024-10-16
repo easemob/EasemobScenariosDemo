@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:background="@drawable/demo_call_primary_menu_bg"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/ease_size_8"
+    android:paddingVertical="@dimen/ease_size_8"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_gift_btn"
+        android:src="@drawable/icon_gift"
+        android:background="@drawable/demo_input_gift_bg"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="@+id/rl_bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/rl_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:padding="4dp"
+        android:layout_width="@dimen/ease_size_36"
+        android:layout_height="@dimen/ease_size_36"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rl_bottom"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_gift_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/demo_input_gift_bg"
+        android:paddingVertical="@dimen/ease_size_8"
+        android:paddingHorizontal="@dimen/ease_size_16"
+        android:layout_marginEnd="@dimen/ease_size_40"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/ease_size_38">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:src="@drawable/icon_message"
+            android:layout_marginStart="@dimen/ease_size_8"
+            android:layout_width="@dimen/ease_size_20"
+            android:layout_height="@dimen/ease_size_20"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginStart="@dimen/ease_size_4"
+            style="@style/em_1v1_call_primary_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <FrameLayout
+        android:id="@+id/edittext_layout"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rl_face"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/em_1v1_call_primary_input_root">
+
+        <com.hyphenate.easeui.widget.EaseInputEditText
+            android:id="@+id/et_sendmessage"
+            android:hint="@string/ease_chat_primary_menu_input_hint"
+            style="@style/em_1v1_call_primary_input_edit" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_face"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edittext_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/edittext_layout"
+        style="@style/em_1v1_call_primary_face_layout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_face_normal"
+            app:tint="@color/ease_neutral_30"
+            android:src="@drawable/ease_chatting_emoji_btn_normal"
+            android:layout_toStartOf="@+id/btn_send"
+            style="@style/em_1v1_call_primary_face" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_face_checked"
+            app:tint="@color/ease_neutral_30"
+            android:layout_toStartOf="@+id/btn_send"
+            android:src="@drawable/ease_chat_primary_menu_setmode_keyboard_btn"
+            style="@style/em_1v1_call_primary_input_switch" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_send"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ease_chat_input_primary_send_icon"
+            style="@style/em_1v1_call_primary_send_button" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
