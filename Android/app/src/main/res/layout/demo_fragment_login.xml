@@ -102,7 +102,7 @@
         android:button="@drawable/demo_cb_agreement_select"
         android:textSize="12sp"
         android:textColor="@color/white"
-        android:layout_marginStart="40dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/tv_agreement"
@@ -113,8 +113,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cb_select"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="30dp"
         android:lineSpacingExtra="10dp"
+        android:textSize="11sp"
         android:textColorHighlight="@color/transparent"
         android:textColor="@color/ease_color_on_background"
         android:text="@string/em_login_agreement"
