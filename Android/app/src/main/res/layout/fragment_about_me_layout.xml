@@ -27,6 +27,9 @@
         android:layout_marginBottom="7dp"
         android:drawablePadding="4dp"
         android:textStyle="bold"
+        android:textColor="@color/color_11111"
+        android:textSize="20sp"
+        android:textAppearance="@style/Ease.TextAppearance.Headline.Large"
         tools:text="Json"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -37,56 +40,68 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/center_layout"
         android:layout_marginBottom="72dp"
+        android:textColor="@color/color_6F738C"
+        android:textAppearance="@style/Ease.TextAppearance.Title.Small"
         tools:text="123456"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.cardview.widget.CardView
         android:id="@+id/center_layout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        android:padding="10dp"
+        app:cardCornerRadius="16dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/demo_about_me_item_bg"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.hyphenate.easeui.widget.EaseArrowItemView
-            android:id="@+id/about_official_website"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kit_version"
-            app:arrowItemTitle="@string/em_about_official_website"
-            app:arrowItemContent="@string/em_about_official_website_url"
-            app:arrowItemContentColor="@color/ease_color_primary"
-            style="@style/em_about_me_item"
-            app:arrowItemShowArrow="true"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="54dp"/>
+            android:layout_height="match_parent">
 
-        <com.hyphenate.easeui.widget.EaseArrowItemView
-            android:id="@+id/about_business_cooperation"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kit_version"
-            app:arrowItemTitle="@string/em_about_business_cooperation"
-            app:arrowItemContent="@string/em_about_business_cooperation_number"
-            app:arrowItemContentColor="@color/ease_color_primary"
-            style="@style/em_about_me_item"
-            app:arrowItemShowArrow="true"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"/>
+            <com.hyphenate.easeui.widget.EaseArrowItemView
+                android:id="@+id/about_official_website"
+                app:layout_constraintTop_toBottomOf="@+id/tv_kit_version"
+                app:arrowItemTitle="@string/em_about_official_website"
+                app:arrowItemContent="@string/em_about_official_website_url"
+                app:arrowItemContentColor="@color/ease_color_primary"
+                style="@style/em_about_me_item"
+                app:arrowItemShowArrow="true"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"/>
 
-        <com.hyphenate.easeui.widget.EaseArrowItemView
-            android:id="@+id/about_logout"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kit_version"
-            app:arrowItemTitle="@string/em_about_logout"
-            style="@style/em_about_me_item2"
-            app:arrowItemShowArrow="true"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"/>
+            <com.hyphenate.easeui.widget.EaseArrowItemView
+                android:id="@+id/about_business_cooperation"
+                app:layout_constraintTop_toBottomOf="@+id/tv_kit_version"
+                app:arrowItemTitle="@string/em_about_business_cooperation"
+                app:arrowItemContent="@string/em_about_business_cooperation_number"
+                app:arrowItemContentColor="@color/ease_color_primary"
+                style="@style/em_about_me_item"
+                app:arrowItemShowArrow="true"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"/>
+
+            <com.hyphenate.easeui.widget.EaseArrowItemView
+                android:id="@+id/about_logout"
+                app:layout_constraintTop_toBottomOf="@+id/tv_kit_version"
+                app:arrowItemTitle="@string/em_about_logout"
+                style="@style/em_about_me_item2"
+                app:arrowItemShowArrow="true"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
 
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

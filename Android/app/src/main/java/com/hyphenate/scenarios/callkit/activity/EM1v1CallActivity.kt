@@ -271,6 +271,8 @@ open class EM1v1CallActivity: EMBaseCallActivity<Activity1v1CallLayoutBinding>()
         ChatLog.d(TAG,"send1v1CallMessageSuccess $message")
         message?.let {
             binding.callMessageLayout.loadCallMessage(it)
+            binding.callInputPrimary.chatPrimaryMenu?.showNormalStatus()
+            binding.callInputPrimary.hideEmojiKeyboard()
         }
     }
 

@@ -40,7 +40,6 @@
             android:layout_marginEnd="16dp"
             style="@style/em_notification_title"
             android:gravity="start|bottom"
-            android:padding="2dp"
             android:layout_width="0dp"
             android:layout_height="0dp"/>
 
@@ -54,7 +53,6 @@
             android:layout_marginEnd="16dp"
             style="@style/em_notification_subtitle"
             android:gravity="start|top"
-            android:padding="2dp"
             android:layout_width="0dp"
             android:layout_height="0dp"/>
 

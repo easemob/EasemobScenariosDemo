@@ -15,7 +15,7 @@
 
     <style name="em_1v1_call_title">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textAppearance">@style/Ease.TextAppearance.Title.Small</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Medium</item>
         <item name="android:layout_marginStart">8dp</item>
         <item name="android:gravity">start|center_vertical</item>
         <item name="android:maxLength">32</item>
@@ -25,7 +25,8 @@
 
     <style name="em_1v1_call_subtitle" parent="em_1v1_call_title">
         <item name="android:maxLength">16</item>
-        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Small</item>
+        <item name="android:textColor">@color/white_80</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Small</item>
     </style>
 
     <style name="em_1v1_call_time" parent="em_1v1_call_title">
@@ -42,7 +43,7 @@
 
     <style name="em_1v1_call_primary_title">
         <item name="android:text">@string/em_call_primary_menu_title</item>
-        <item name="android:textColor">@color/pc_white</item>
+        <item name="android:textColor">@color/white_80</item>
         <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Large</item>
         <item name="android:layout_marginEnd">@dimen/ease_size_8</item>
     </style>
@@ -216,6 +217,7 @@
         <item name="arrowItemTitleStyle">bold</item>
         <item name="arrowItemTitleColor">@color/ease_group_arrow_item_title_color</item>
         <item name="arrowItemShowDivider">true</item>
+        <item name="arrowItemArrowSrc">@drawable/icon_next</item>
         <item name="arrowItemContentColor">@color/ease_group_arrow_item_content_color</item>
     </style>
 
@@ -241,7 +243,7 @@
 
     <style name="em_notification_title">
         <item name="android:textColor">@color/ease_neutral_10</item>
-        <item name="android:textAppearance">@style/Ease.TextAppearance.Title.Small</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Title.Medium</item>
         <item name="android:layout_marginStart">12dp</item>
         <item name="android:maxLength">32</item>
         <item name="android:maxLines">1</item>
@@ -249,6 +251,7 @@
     </style>
 
     <style name="em_notification_subtitle" parent="em_notification_title">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Medium</item>
         <item name="android:textColor">@color/ease_neutral_50</item>
     </style>
 
@@ -261,5 +264,37 @@
         <item name="android:paddingEnd">@dimen/ease_size_0</item>
         <item name="android:paddingTop">@dimen/ease_size_4</item>
         <item name="android:paddingBottom">@dimen/ease_size_4</item>
+    </style>
+
+    <style name="ease_chat_primary_menu_input_edit">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/chat_primary_menu_input_bg</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:imeOptions">actionSend</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:inputType">text</item>
+        <item name="android:minHeight">@dimen/ease_size_36</item>
+        <item name="android:paddingStart">@dimen/ease_size_10</item>
+        <item name="android:paddingTop">@dimen/ease_size_3</item>
+        <item name="android:paddingEnd">@dimen/ease_size_10</item>
+        <item name="android:paddingBottom">@dimen/ease_size_3</item>
+        <item name="android:textColor">@color/ease_color_on_background_low</item>
+        <item name="android:textColorHint">@color/ease_color_text_hint</item>
+    </style>
+
+    <style name="ease_dialog_left_button">
+        <item name="android:background">@drawable/chat_dialog_border</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:textColor">@color/ease_custom_dialog_left_text_color</item>
+        <item name="android:text">@string/ease_dialog_cancel</item>
+    </style>
+
+    <style name="ease_dialog_right_button">
+        <item name="android:background">@drawable/chat_custom_dialog_action_bg</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:textColor">@color/ease_selector_custom_dialog_tv_right_color</item>
+        <item name="android:text">@string/ease_dialog_confirm</item>
     </style>
 </resources>

@@ -11,9 +11,17 @@
         android:layout_marginTop="-31dp"
         app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/icon_coming_call_bg"
+        android:background="@color/ease_color_background"
         android:layout_width="match_parent"
         android:layout_height="0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:src="@drawable/icon_dialog_incoming_bg"
+            android:scaleType="centerInside"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_name"
@@ -22,6 +30,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="UserName"
+            android:textColor="@color/color_11111"
+            android:textSize="20sp"
+            android:textAppearance="@style/Ease.TextAppearance.Headline.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -31,6 +42,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/color_6F738C"
+            android:textAppearance="@style/Ease.TextAppearance.Title.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -62,7 +75,6 @@
         android:id="@+id/iv_avatar"
         app:ease_shape_type="round"
         android:scaleType="centerCrop"
-        android:src="@drawable/pure1v1_user_bg7"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

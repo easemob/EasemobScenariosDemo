@@ -14,29 +14,30 @@
         android:id="@+id/iv_gift_btn"
         android:src="@drawable/icon_gift"
         android:background="@drawable/demo_input_gift_bg"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="@+id/rl_bottom"
         app:layout_constraintBottom_toBottomOf="@+id/rl_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp"
         android:padding="4dp"
         android:layout_width="@dimen/ease_size_36"
         android:layout_height="@dimen/ease_size_36"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/rl_bottom"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_gift_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/demo_input_gift_bg"
-        android:paddingVertical="@dimen/ease_size_8"
-        android:paddingHorizontal="@dimen/ease_size_16"
-        android:layout_marginEnd="@dimen/ease_size_40"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginEnd="@dimen/ease_size_8"
+        android:layout_marginStart="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_width="0dp"
-        android:layout_height="@dimen/ease_size_38">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:src="@drawable/icon_message"
@@ -55,7 +56,7 @@
 
     <FrameLayout
         android:id="@+id/edittext_layout"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rl_face"
         app:layout_constraintBottom_toBottomOf="parent"

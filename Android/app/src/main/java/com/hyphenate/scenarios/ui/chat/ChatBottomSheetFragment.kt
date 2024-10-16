@@ -1,6 +1,7 @@
 package com.hyphenate.scenarios.ui.chat
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.hyphenate.easeui.base.EaseBaseSheetFragmentDialog
 import com.hyphenate.easeui.feature.chat.EaseChatFragment
+import com.hyphenate.easeui.feature.chat.interfaces.OnChatInputChangeListener
 import com.hyphenate.scenarios.R
 import com.hyphenate.scenarios.databinding.DemoChatBottomSheetLayoutBinding
 

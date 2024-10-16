@@ -1,12 +1,16 @@
 package com.hyphenate.scenarios.callkit.widget
 
 import android.content.Context
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.text.SpannableStringBuilder
 import android.text.Spanned
+import android.text.style.AbsoluteSizeSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
+import android.text.style.StyleSpan
+import android.text.style.TextAppearanceSpan
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
@@ -90,10 +94,10 @@ class CallGiftChatRow @JvmOverloads constructor(
                                         withContext(Dispatchers.Main) {
                                             // 添加 图片
                                             contentView?.text = spannableStringBuilder
-                                            setSpanMargin(1.5f,spannableStringBuilder)
+                                            setSpanMargin(1.0f,spannableStringBuilder)
                                             // 添加 nickname
                                             addNickName(info,spannableStringBuilder)
-                                            setSpanMargin(1.5f,spannableStringBuilder)
+                                            setSpanMargin(1.0f,spannableStringBuilder)
                                             // 添加 文本内容
                                             addContent(giftEntity,spannableStringBuilder)
                                             setSpanMargin(1.5f,spannableStringBuilder)
@@ -157,6 +161,18 @@ class CallGiftChatRow @JvmOverloads constructor(
             if (span.isNotEmpty() && nickname.isNotEmpty()){
                 span.append(nickname)
                 span.setSpan(
+                    AbsoluteSizeSpan(14, true),
+                    span.length - nickname.length
+                    , span.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                span.setSpan(
+                    TextAppearanceSpan(context,com.hyphenate.easeui.R.style.Ease_TextAppearance_Label_Medium),
+                    span.length - nickname.length
+                    , span.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                span.setSpan(
                     ForegroundColorSpan(ContextCompat.getColor(context, com.hyphenate.easeui.R.color.ease_primary_80)), // 设置文本颜色
                     span.length - nickname.length,
                     span.length,
@@ -172,6 +188,12 @@ class CallGiftChatRow @JvmOverloads constructor(
             if (gift.giftName.isNullOrEmpty().not()){
                 val content = context.resources.getString(R.string.em_call_gift_name,gift.giftName)
                 span.append(content)
+                span.setSpan(
+                    TextAppearanceSpan(context,com.hyphenate.easeui.R.style.Ease_TextAppearance_Body_Medium),
+                    span.length - content.length
+                    , span.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
                 span.setSpan(
                     ForegroundColorSpan(ContextCompat.getColor(context, R.color.white)), // 设置文本颜色
                     span.length - content.length,

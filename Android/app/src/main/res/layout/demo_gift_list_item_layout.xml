@@ -47,6 +47,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:src="@drawable/icon_dollar"
                 android:layout_width="10dp"
                 android:layout_height="10dp"/>
 

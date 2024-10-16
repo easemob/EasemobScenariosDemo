@@ -132,7 +132,7 @@ object UIKitManager {
 
     fun setUIKitConfigs(context: Context) {
         EaseIM.getConfig()?.avatarConfig?.let {
-            it.avatarShape = EaseImageView.ShapeType.RECTANGLE
+            it.avatarShape = EaseImageView.ShapeType.ROUND
             it.avatarRadius = context.resources.getDimensionPixelSize(com.hyphenate.easeui.R.dimen.ease_corner_extra_small)
         }
     }
