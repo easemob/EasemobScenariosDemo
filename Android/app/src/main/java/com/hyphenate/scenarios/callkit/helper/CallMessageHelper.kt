@@ -102,6 +102,25 @@ object CallMessageHelper {
         }
     }
 
+    fun cancelMatchNotify(
+        conversationId:String,
+        callback:ChatCallback? = null
+    ){
+        val message = ChatMessage.createSendMessage(ChatMessageType.CMD)
+        callback?.let {  message.setMessageStatusCallback(it) }
+        DemoHelper.getInstance().context.resources?.let {
+            message.deliverOnlineOnly(true)
+            message.to = conversationId
+            message.chatType = ChatType.Chat
+            val txtBody = ChatCmdMessageBody(EMCallConstant.EM1v1SomeUserMatchCanceled)
+            EaseIM.getCurrentUser()?.let { profile ->
+                message.addUserInfo(profile.name, profile.avatar)
+            }
+            message.addBody(txtBody)
+            ChatClient.getInstance().chatManager().sendMessage(message)
+        }
+    }
+
     fun insertEndMessage(
         conversationId: String,
         callId:String

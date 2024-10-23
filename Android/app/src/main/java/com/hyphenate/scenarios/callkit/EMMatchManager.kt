@@ -5,6 +5,7 @@ import com.hyphenate.easeui.common.impl.OnError
 import com.hyphenate.easeui.common.impl.OnValueSuccess
 import com.hyphenate.scenarios.DemoHelper
 import com.hyphenate.scenarios.bean.MatchUserInfo
+import com.hyphenate.scenarios.callkit.helper.CallMessageHelper
 import com.hyphenate.scenarios.repository.EMCall1v1RoomRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,6 +39,9 @@ object EMMatchManager {
             }
                 .catchChatException { onError?.invoke(it.errorCode, it.message) }
                 .collect {
+                    EM1v1CallKitManager.otherMatchInfo?.let{
+                        CallMessageHelper.cancelMatchNotify(it.matchedChatUser)
+                    }
                     onSuccess?.invoke(it)
                 }
         }
