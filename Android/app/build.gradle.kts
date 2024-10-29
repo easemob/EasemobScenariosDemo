@@ -67,16 +67,16 @@ android {
 
     signingConfigs {
         getByName("debug") {
-            storeFile = file(properties.getProperty("DEBUG_STORE_FILE_PATH", "./keystore/sdkdemo.jks"))
-            storePassword = properties.getProperty("DEBUG_STORE_PASSWORD", "123456")
-            keyAlias = properties.getProperty("DEBUG_KEY_ALIAS", "easemob")
-            keyPassword = properties.getProperty("DEBUG_KEY_PASSWORD", "123456")
+            storeFile = file(properties.getProperty("DEBUG_STORE_FILE_PATH", ""))
+            storePassword = properties.getProperty("DEBUG_STORE_PASSWORD", "")
+            keyAlias = properties.getProperty("DEBUG_KEY_ALIAS", "")
+            keyPassword = properties.getProperty("DEBUG_KEY_PASSWORD", "")
         }
         create("release") {
-            storeFile = file(properties.getProperty("RELEASE_STORE_FILE_PATH", "./keystore/sdkdemo.jks"))
-            storePassword = properties.getProperty("RELEASE_STORE_PASSWORD", "123456")
-            keyAlias = properties.getProperty("RELEASE_KEY_ALIAS", "easemob")
-            keyPassword = properties.getProperty("RELEASE_KEY_PASSWORD", "123456")
+            storeFile = file(properties.getProperty("RELEASE_STORE_FILE_PATH", ""))
+            storePassword = properties.getProperty("RELEASE_STORE_PASSWORD", "")
+            keyAlias = properties.getProperty("RELEASE_KEY_ALIAS", "")
+            keyPassword = properties.getProperty("RELEASE_KEY_PASSWORD", "")
         }
     }
 
