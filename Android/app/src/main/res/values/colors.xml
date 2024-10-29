@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="p20_black">#33000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="pc_white">#CCFFFF</color>
+    <color name="gray">#ffe9e9e9</color>
+    <color name="em_toast_color_bg">#99000000</color>
+    <color name="em_toast_color_text">@color/white</color>
+    <color name="transparent">#00000000</color>
+    <color name="em_color_brand">#ff04aef0</color>
+    <color name="neutral8">#C8CDD0</color>
+    <color name="color_11111">#111111</color>
+    <color name="color_6F738C">#6F738C</color>
+
+    <color name="secondary_80">#99FFD4</color>
+
+    <color name="demo_login_button_bg_start">#63CCF7</color>
+    <color name="demo_login_button_bg_center">#7A60FA</color>
+    <color name="demo_login_button_bg_end">#9B4DF7</color>
+
+    <color name="em_main_color_tab_normal">@color/ease_color_on_background_high</color>
+    <color name="em_main_color_tab_selected">@color/ease_color_primary</color>
+
+    <color name="em_private_room_content">#989DBA</color>
+</resources>

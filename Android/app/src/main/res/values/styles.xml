@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- call -->
+    <declare-styleable name="EMChronometer">
+        <!-- Format string: if specified, the Chronometer will display this
+             string, with the first "%s" replaced by the current timer value
+             in "MM:SS" or "H:MM:SS" form.
+             If no format string is specified, the Chronometer will simply display
+             "MM:SS" or "H:MM:SS". -->
+        <attr name="format" format="string" localization="suggested" />
+        <!-- Specifies whether this Chronometer counts down or counts up from the base.
+              If not specified this is false and the Chronometer counts up. -->
+        <attr name="countDown" format="boolean" />
+    </declare-styleable>
+
+    <style name="em_1v1_call_title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Medium</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:maxLength">32</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="em_1v1_call_subtitle" parent="em_1v1_call_title">
+        <item name="android:maxLength">16</item>
+        <item name="android:textColor">@color/white_80</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Small</item>
+    </style>
+
+    <style name="em_1v1_call_time" parent="em_1v1_call_title">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.ExtraSmall</item>
+    </style>
+
+    <style name="em_1v1_chat_primary_menu_gift">
+        <item name="android:layout_width">@dimen/ease_size_30</item>
+        <item name="android:layout_height">@dimen/ease_size_30</item>
+        <item name="android:layout_marginBottom">@dimen/ease_size_5</item>
+        <item name="android:layout_marginStart">@dimen/ease_size_12</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="em_1v1_call_primary_title">
+        <item name="android:text">@string/em_call_primary_menu_title</item>
+        <item name="android:textColor">@color/white_80</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Large</item>
+        <item name="android:layout_marginEnd">@dimen/ease_size_8</item>
+    </style>
+
+    <style name="em_1v1_call_primary_input_root">
+        <item name="android:layout_width">@dimen/ease_size_0</item>
+        <item name="android:layout_height">@dimen/ease_size_38</item>
+        <item name="android:layout_marginStart">@dimen/ease_size_8</item>
+        <item name="android:layout_marginEnd">@dimen/ease_size_12</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="em_1v1_call_primary_input_edit">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/demo_call_primary_input_bg</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:imeOptions">actionSend</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:inputType">text</item>
+        <item name="android:minHeight">@dimen/ease_size_36</item>
+        <item name="android:paddingStart">@dimen/ease_size_10</item>
+        <item name="android:paddingTop">@dimen/ease_size_3</item>
+        <item name="android:paddingBottom">@dimen/ease_size_3</item>
+        <item name="android:textColor">@color/ease_color_on_background_low</item>
+        <item name="android:textColorHint">@color/ease_color_text_hint</item>
+    </style>
+
+    <style name="em_1v1_call_primary_face_layout">
+        <item name="android:layout_width">68dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="em_1v1_call_primary_face">
+        <item name="android:layout_width">@dimen/ease_size_30</item>
+        <item name="android:layout_height">@dimen/ease_size_30</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="em_1v1_call_primary_input_switch" parent="em_1v1_call_primary_face">
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="em_1v1_call_primary_send_button">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Medium</item>
+        <item name="android:layout_width">@dimen/ease_size_30</item>
+        <item name="android:layout_height">@dimen/ease_size_30</item>
+        <item name="android:layout_marginStart">@dimen/ease_size_4</item>
+        <item name="android:layout_marginEnd">@dimen/ease_size_4</item>
+        <item name="android:background">@drawable/ease_chat_primary_menu_send_btn_selector</item>
+        <item name="android:textColor">@color/ease_color_background</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <!-- splash -->
+    <style name="splash_powered_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|center</item>
+        <item name="android:layout_marginBottom">60dp</item>
+        <item name="android:textColor">@color/ease_color_text_secondary</item>
+    </style>
+
+    <style name="splash_iv_bg_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/splash_bg_light</item>
+    </style>
+
+    <style name="splash_brand_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/ease_size_35</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/ease_color_primary</item>
+    </style>
+
+    <!-- login -->
+    <style name="em_login_et_input">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/ease_size_48</item>
+        <item name="android:layout_marginLeft">@dimen/ease_size_30</item>
+        <item name="android:layout_marginRight">@dimen/ease_size_30</item>
+        <item name="android:maxWidth">400dp</item>
+        <item name="android:background">@drawable/demo_login_et_bg</item>
+        <item name="android:paddingStart">@dimen/ease_size_16</item>
+        <item name="android:paddingEnd">@dimen/ease_size_16</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:textColor">@color/ease_color_text_on_primary</item>
+        <item name="android:textColorHint">@color/ease_color_text_hint</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="em_login_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">@dimen/ease_size_20</item>
+        <item name="android:layout_marginLeft">@dimen/ease_size_30</item>
+        <item name="android:layout_marginRight">@dimen/ease_size_30</item>
+        <item name="android:background">@drawable/demo_login_btn_bg</item>
+        <item name="android:textColor">@color/ease_color_text_primary</item>
+        <item name="android:enabled">false</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Headline.Small</item>
+    </style>
+
+    <style name="main_bottom_view_normal">
+        <item name="android:textColor">@color/em_main_color_tab_normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="main_bottom_view_selected">
+        <item name="android:textColor">@color/em_main_color_tab_selected</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="em_fragment_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:textColor">@color/ease_color_on_background_low</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Title.Medium</item>
+    </style>
+
+    <style name="em_main_badge_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/ease_size_3</item>
+        <item name="android:layout_marginLeft">@dimen/ease_size_20</item>
+        <item name="android:layout_marginStart">@dimen/ease_size_20</item>
+        <item name="android:background">@drawable/demo_main_unread_count_bg</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:textColor">@color/ease_color_text_primary</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Small</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/ease_size_4</item>
+        <item name="android:paddingEnd">@dimen/ease_size_4</item>
+    </style>
+
+    <!-- private room -->
+    <style name="em_private_room_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/em_private_room_content</item>
+        <item name="android:layout_marginTop">@dimen/ease_size_40</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Medium</item>
+    </style>
+
+    <style name="em_private_room_user_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Headline.Large</item>
+    </style>
+
+    <!-- about me -->
+    <style name="em_about_me_item">
+        <item name="background">@color/ease_color_background</item>
+        <item name="arrowItemTitleSize">16sp</item>
+        <item name="arrowItemTitleStyle">bold</item>
+        <item name="arrowItemTitleColor">@color/ease_group_arrow_item_title_color</item>
+        <item name="arrowItemShowDivider">true</item>
+        <item name="arrowItemArrowSrc">@drawable/icon_next</item>
+        <item name="arrowItemContentColor">@color/ease_group_arrow_item_content_color</item>
+    </style>
+
+    <style name="em_about_me_item2"  parent="@style/em_about_me_item">
+        <item name="arrowItemShowDivider">false</item>
+    </style>
+
+    <style name="em_self_information_title">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Title.Medium</item>
+        <item name="android:textColor">@color/ease_contact_arrow_item_title_color</item>
+    </style>
+
+    <style name="em_self_information_subtitle">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Large</item>
+        <item name="android:textColor">@color/ease_contact_arrow_item_content_color</item>
+    </style>
+
+    <!-- search view -->
+    <style name="ease_widget_search_view_root">
+        <item name="android:background">@drawable/demo_conversation_search_bg</item>
+    </style>
+
+
+    <style name="em_notification_title">
+        <item name="android:textColor">@color/ease_neutral_10</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Title.Medium</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:maxLength">32</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="em_notification_subtitle" parent="em_notification_title">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Medium</item>
+        <item name="android:textColor">@color/ease_neutral_50</item>
+    </style>
+
+    <style name="ease_widget_search_view">
+        <item name="search_text_color">@color/ease_color_text_hint</item>
+        <item name="search_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/ease_size_44</item>
+        <item name="android:paddingStart">@dimen/ease_size_0</item>
+        <item name="android:paddingEnd">@dimen/ease_size_0</item>
+        <item name="android:paddingTop">@dimen/ease_size_4</item>
+        <item name="android:paddingBottom">@dimen/ease_size_4</item>
+    </style>
+
+    <style name="ease_chat_primary_menu_input_edit">
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/chat_primary_menu_input_bg</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:imeOptions">actionSend</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:inputType">text</item>
+        <item name="android:minHeight">@dimen/ease_size_36</item>
+        <item name="android:paddingStart">@dimen/ease_size_10</item>
+        <item name="android:paddingTop">@dimen/ease_size_3</item>
+        <item name="android:paddingEnd">@dimen/ease_size_10</item>
+        <item name="android:paddingBottom">@dimen/ease_size_3</item>
+        <item name="android:textColor">@color/ease_color_on_background_low</item>
+        <item name="android:textColorHint">@color/ease_color_text_hint</item>
+    </style>
+
+    <style name="ease_dialog_left_button">
+        <item name="android:background">@drawable/chat_dialog_border</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:textColor">@color/ease_custom_dialog_left_text_color</item>
+        <item name="android:text">@string/ease_dialog_cancel</item>
+    </style>
+
+    <style name="ease_dialog_right_button">
+        <item name="android:background">@drawable/chat_custom_dialog_action_bg</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Body.Large</item>
+        <item name="android:textColor">@color/ease_selector_custom_dialog_tv_right_color</item>
+        <item name="android:text">@string/ease_dialog_confirm</item>
+    </style>
+</resources>

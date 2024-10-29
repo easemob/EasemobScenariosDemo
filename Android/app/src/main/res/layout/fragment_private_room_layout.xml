@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/root_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_private_room_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        style="@style/em_fragment_title"
+        android:text="@string/em_private_room_title"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_private_room_refresh"
+        app:layout_constraintTop_toTopOf="@+id/tv_private_room_title"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_private_room_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/icon_home_refresh"
+        android:layout_marginEnd="8dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/iv_user_card_layout"
+        app:layout_constraintTop_toBottomOf="@+id/tv_private_room_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/ease_size_8"
+        android:layout_marginBottom="@dimen/ease_size_16"
+        android:layout_marginStart="@dimen/ease_size_16"
+        android:layout_marginEnd="@dimen/ease_size_16"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <com.hyphenate.easeui.widget.EaseImageView
+            android:id="@+id/iv_user_card"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.hyphenate.easeui.widget.EaseImageView
+        android:id="@+id/iv_empty"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.35"
+        android:src="@drawable/icon_empty_data"
+        android:layout_marginBottom="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/em_private_room_content"
+        style="@style/em_private_room_content"/>
+
+    <com.hyphenate.easeui.widget.EaseImageView
+        android:id="@+id/iv_tab"
+        app:layout_constraintTop_toTopOf="@+id/iv_user_card_layout"
+        app:layout_constraintStart_toStartOf="@+id/iv_user_card_layout"
+        android:layout_marginStart="@dimen/ease_size_16"
+        android:layout_marginTop="@dimen/ease_size_16"
+        android:src="@drawable/icon_private_tab"
+        android:visibility="gone"
+        android:layout_width="@dimen/ease_size_36"
+        android:layout_height="@dimen/ease_size_30"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_private_call"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user_card_layout"
+        app:layout_constraintEnd_toEndOf="@+id/iv_user_card_layout"
+        android:layout_marginEnd="@dimen/ease_size_27"
+        android:layout_marginBottom="@dimen/ease_size_25"
+        android:src="@drawable/icon_private_call"
+        android:visibility="gone"
+        android:layout_width="@dimen/ease_size_64"
+        android:layout_height="@dimen/ease_size_64"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_private_call_bg"
+        app:layout_constraintTop_toTopOf="@+id/iv_private_call"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_private_call"
+        app:layout_constraintEnd_toEndOf="@+id/iv_private_call"
+        app:layout_constraintStart_toStartOf="@+id/iv_private_call"
+        android:src="@drawable/icon_private_call_bg"
+        android:visibility="gone"
+        android:layout_width="@dimen/ease_size_76"
+        android:layout_height="@dimen/ease_size_76"/>
+
+    <com.hyphenate.easeui.widget.EaseImageView
+        android:id="@+id/iv_user_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user_card_layout"
+        app:layout_constraintStart_toStartOf="@+id/iv_user_card_layout"
+        android:layout_marginStart="@dimen/ease_size_30"
+        android:layout_marginBottom="@dimen/ease_size_25"
+        app:ease_shape_type="round"
+        android:visibility="gone"
+        android:layout_width="@dimen/ease_size_32"
+        android:layout_height="@dimen/ease_size_32"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_user_name"
+        app:layout_constraintTop_toTopOf="@+id/iv_user_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar"
+        app:layout_constraintStart_toEndOf="@+id/iv_user_avatar"
+        android:layout_marginStart="@dimen/ease_size_10"
+        android:visibility="gone"
+        style="@style/em_private_room_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

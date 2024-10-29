@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/demo_call_message_bg"
+    android:layout_marginTop="4dp"
+    android:paddingVertical="4dp"
+    android:paddingHorizontal="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_chatcontent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/ease_chat_row_send_text_content_color"
+        android:gravity="start|center_vertical"
+        android:textAppearance="@style/Ease.TextAppearance.Body.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="H" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
